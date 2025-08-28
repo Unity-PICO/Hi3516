@@ -14,24 +14,6 @@
 - **通信协议**：I2C/SPI/UART 等多种传感器接口协议实现。
 - **集成示例**：如何将传感器数据与学习助手逻辑进行联动的代码示例。
 
-## 目录结构示例
-
-```
-hardware/
-├── audio/
-│   └── mic_driver.c
-├── light/
-│   └── light_sensor.c
-├── motion/
-│   └── pir_driver.c
-│   └── accel_driver.c
-├── temp/
-│   └── temp_sensor.c
-├── common/
-│   └── i2c_utils.c
-│   └── uart_utils.c
-```
-
 ## 快速上手
 
 1. **硬件连接**：按照电路原理图将支持的传感器接入 Hi3516 板卡。
@@ -43,31 +25,10 @@ hardware/
 4. **部署固件**：将编译后的二进制文件烧录至 Hi3516 设备。
 5. **运行模块**：启动相关模块开始环境感知。
 
-## 示例代码
-
-采集环境噪声：
-```c
-#include "audio/mic_driver.h"
-
-int noise = get_ambient_noise_level();
-printf("当前噪声水平: %d\n", noise);
-```
-
-采集光照强度：
-```c
-#include "light/light_sensor.h"
-
-int lux = read_light_intensity();
-printf("当前光照强度: %d lux\n", lux);
-```
-
 ## 支持的传感器类型
 
 - **麦克风（ADC/I2S）**
-- **光照传感器（I2C/SPI）**
-- **红外运动传感器（GPIO）**
-- **加速度计（I2C/SPI）**
-- **温度传感器（I2C/UART）**
+- **摄像头（I2C/SPI）**
 
 ## 贡献方式
 
